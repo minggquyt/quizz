@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,800;1,100;1,200;1,300&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Oswald:wght@300&family=Roboto:ital,wdth,wght@0,91.7,100..900;1,91.7,100..900&family=Space+Grotesk:wght@700&family=Unbounded&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/edit/edit.css">
+    <title>Quizz</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Logo</h1>
+        <form action="" class="header--search">
+            <span class="material-symbols-outlined">
+                search
+            </span>
+            <input type="text" placeholder="Tìm kiếm bài kiểm tra thử">
+        </form>
+    </div>
+    <div class="edit--pseudo">
+    </div>
+    <div class="content">
+        <div class="edit--alert">
+            Bạn chưa nhập đủ 5 câu hỏi
+            <button>Đồng ý</button>
+        </div>
+        <div class="content__header">
+            <h1>Tạo một học phần mới
+                <div>
+                    <button class="content__header--create_draft_button">Lưu bản nháp</button>
+                    <button class="content__header--create_button">Tạo</button>
+                </div>
+            </h1>
+            <form action="" class="content__header--quiz_title">
+                <p>Tiêu đề</p>
+                <input type="text" placeholder="Tên Quizz">
+            </form>
+        </div>
+        <div class="content__body">
+            <div class="content__body--option">
+                <h1>Gợi ý</h1>
+            </div>
+            <div class="content__body--cards">
+
+            </div>
+            <button class="content__body--addcard">
+                Thêm thẻ
+            </button>
+        </div>
+    </div>
+    <script type="module" src="/edit/edit.js"></script>
+</body>
+
+</html>

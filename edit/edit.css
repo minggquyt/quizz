@@ -1,0 +1,271 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    position: relative;
+}
+.header{
+    width: 100%;
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #110f46;
+}
+.header > h1{
+    color: white;
+}
+.header > form{
+    max-width: 600px;
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    padding-inline: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #2E3856;
+}
+.header > form > span{
+    color: white;
+}
+.header > form > input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: white;
+}
+.edit--pseudo{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    display: none;
+    top: 0;
+    background-color: black;
+    opacity: 0.8;
+    z-index: 1;
+}
+.edit--alert{
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    top: 50px;
+    left: calc((100% - 300px) / 2);
+    transform: scale(0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: white;
+    background-color:#1A1D28;
+    transition: transform 0.3s ease-in-out;
+    z-index: 2;
+}
+.edit--alert > button{
+    color: white;
+    width: 150px;
+    height: 50px;
+    background-color: #4255FF;
+    border: none;
+    border-radius: 5px;
+}
+.edit--alert--active{
+    transform: scale(1);
+    overflow-y: hidden;
+}
+.edit--pseudo--active{
+    display: block;
+}
+.content{
+    width: 100%;
+    position: relative;
+    background-color: #110f46;
+}
+.content__header{
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+.content__header > h1{
+    display: flex;
+    justify-content: space-between;
+}
+.content__header > h1 > div{
+
+    display: flex;
+    gap: 20px;
+}
+.content__header--create_button{
+    width: 200px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #4255FF;
+}
+.content__header--create_draft_button{
+    width: 200px;
+    height: 40px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: #4255FF;
+}
+.content__header--quiz_title{
+    width: 100%;
+    height: 60px;   
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #2E3856;
+    padding: 10px 20px;
+    gap: 10px;
+}
+.content__header--quiz_title > input{
+    width: 100%;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+.content__body{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    background-color: #110f46;
+}
+.content__body--option{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background-color: #110f46;
+}
+.content__body--cards{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 20px;
+    gap: 30px;
+}
+.content__body--card{
+    width: 100%;
+    background-color: #2E3856;
+    color: white;
+}
+.content__body--card__header{
+    width: 100%;
+    height: 64px;
+    padding-inline: 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.content__body--card__body{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content__body--card__body__correct{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 20px;
+    gap: 20px;
+}
+.content__body--card__body__correct > div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.content__body--card__body__correct > div > form > input{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    border: none;
+    padding-inline: 20px;
+    border-radius: 5px;
+    color: white;
+    background-color: #0A092D;
+}
+.content__body--card__body__correct--question{
+    flex: 1;
+}
+.content__body--card__body__correct--answer{
+    flex: 1;
+}
+.content__body--card__body__correct--image{
+    width: 80px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    gap: 5px;
+    border: 2px dashed white;
+}
+.content__body--card__body__preview_and_wrong{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 20px;
+    padding-block: 20px;
+    background-color: #1A1D28;
+}
+.content__body--card__body__preview{
+    flex: 1.5;
+}
+.content__body--card__body__wrong{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.content__body--card__body__wrong-answer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: white;
+}
+.content__body--card__body__wrong-answer > input{
+    width: 100%;
+    height: 50px;
+    padding-inline: 20px;
+    color: white;
+    background-color: #0A092D;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+.content__body--card__body__wrong--delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #A8B1FF;
+}
+.content__body--addcard{
+    width: 140px;
+    height: 40px;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: #2E3856;
+}
