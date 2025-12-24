@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded",(e) => {
         })
 
         renderCorrespondQuestion();
+        renderQuizzName();
     }
     else
         console.log("Chưa tồn tại session storage !");
@@ -37,9 +38,12 @@ closeButton.addEventListener('click',(e) => {
     window.location.href = "/";
 })
 
-function renderCorrespondQuestion(){
+function renderQuizzName(){
+    const nameElement = document.querySelector(".content__title--quizzName");
+    nameElement.innerHTML = currentQuizz.name;
+}
 
-    console.log(currentQuizz);
+function renderCorrespondQuestion(){
 
     const container = document.querySelector(".content__test_container");
     currentQuizz.sentences.forEach((sentence) => {

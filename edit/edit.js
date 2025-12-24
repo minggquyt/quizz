@@ -256,7 +256,7 @@ addQuizzCardButton.addEventListener("click", (e) => {
 
     currentAppData[statusOfQuizz][indexOfCurrentQuizz] = currentQuizz;
 
-    console.log(currentAppData);   
+    console.log(currentAppData);
 
     localStorage.setItem("appData", JSON.stringify(currentAppData));
 
@@ -300,8 +300,6 @@ createQuizzButton.addEventListener("click", () => {
         // logic lấy giá trị từ các ô input vào quizz
         getValueInFormToQuizz(currentAppData.finish[indexOfFinishQuizz], 'finish')
 
-        console.log(currentAppData.finish[indexOfCurrentQuizz]);
-
         localStorage.setItem("appData", JSON.stringify(currentAppData));
 
         createStatus.status = true;
@@ -322,7 +320,7 @@ container.addEventListener('change', (e) => {
     console.log(input.dataset.index)
 
     currentQuizz.sentences.forEach((quizz) => {
-        if(quizz.number == input.dataset.index){
+        if (quizz.number == input.dataset.index) {
             console.log("Câu hỏi hiện tại mà người dùng đã nhập: ");
             console.log(quizz);
 
@@ -334,14 +332,14 @@ container.addEventListener('change', (e) => {
             console.log(type);
 
             // logic update lên localStorage 
-            if(type == 'question')
+            if (type == 'question')
                 quizz.question = inputValue;
-            else if(type == 'correctanswer')
+            else if (type == 'correctanswer')
                 quizz['correct-answer'] = inputValue;
-            else{
-                if(type == 'wronganswer1')
+            else {
+                if (type == 'wronganswer1')
                     quizz['wrong-answer'][0] = inputValue;
-                else if(type == 'wronganswer2')
+                else if (type == 'wronganswer2')
                     quizz['wrong-answer'][1] = inputValue;
                 else
                     quizz['wrong-answer'][2] = inputValue;
@@ -349,15 +347,13 @@ container.addEventListener('change', (e) => {
 
             const currentAppData = JSON.parse(localStorage.getItem('appData'));
             currentAppData[statusOfQuizz][indexOfCurrentQuizz] = currentQuizz;
-            localStorage.setItem("appData",JSON.stringify(currentAppData));
+            localStorage.setItem("appData", JSON.stringify(currentAppData));
         }
     })
- 
+
 })
 
 function getValueInFormToQuizz(quizz, status) {
-    console.log(quizz);
-    console.log(status);
 
     const quizzName = getQuizzName();
     if (quizzName == '')
@@ -432,3 +428,28 @@ document.addEventListener("notEnoughQuestion", (e) => {
     })
 })
 
+const quizzNameElement = document.querySelector(".content__header--quiz_title > input");
+quizzNameElement.addEventListener('change', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const inputValue = e.currentTarget.value;
+    let currentAppData = JSON.parse(localStorage.getItem("appData"));
+
+    if (inputValue !== '') 
+        currentQuizz.name = inputValue;
+    else 
+        currentQuizz.name = 'No Name'
+
+    currentAppData[statusOfQuizz][indexOfCurrentQuizz] = currentQuizz;
+    localStorage.setItem("appData", JSON.stringify(currentAppData));
+})
+
+function renderQuizzName() {
+    const name = currentQuizz.name;
+    const quizzNameElement = document.querySelector(".content__header--quiz_title > input");
+    if (name != 'No name')
+        quizzNameElement.value = name;
+}
+
+renderQuizzName();
