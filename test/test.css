@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #0A092D;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 100px;
+}
+.content > button{
+    width: 100px;
+    height: 50px;
+    background-color: #4255FF;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+.content__test_container {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-inline: 50px;
+}
+.content__title{
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #0A092D;
+}
+.content__title > div{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.content__title > span{
+    color: white;
+    cursor: pointer;
+}
+.content__test_card {
+    width: 100%;
+    max-width: 776px;
+    padding: 20px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 15px;
+    background-color: #2E3856;
+}
+
+.content__test_card_header {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+}
+.content__test_card_header--left_content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content__test_card_header--right_content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.content__test_card_body{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.content__test_card_body--answer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+.content__test_card_body--answer > button{
+    width: 345px;
+    height: 60px;
+    border: 2px solid #586380;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+.content__test_card_body--answer > button:hover{
+    background-color: #2a3450;
+}

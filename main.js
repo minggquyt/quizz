@@ -71,6 +71,7 @@ function renderQuizz() {
     deleteQuizz();
 
     updateQuizz();
+
 }
 
 function findIndexAndStatusOfQuizz(currentQuizzId, appData) {
@@ -168,3 +169,26 @@ function deleteQuizz() {
     })
 }
 
+const quizzesContainer = document.querySelector(".content__body");
+quizzesContainer.addEventListener('click',(e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const quizzChoosen = e.target.closest('.content__body--quizz');
+
+    if(quizzChoosen != null){
+
+        const updateButton = document.querySelector(`#${quizzChoosen.id} > h1  > button`);
+        const deleteButton = document.querySelector(`#${quizzChoosen.id} > p  > span`);
+
+        if(e.target !== updateButton && e.target !== deleteButton){
+            let currentAppData = JSON.parse(localStorage.getItem("appData"));
+            const Quizz = findIndexAndStatusOfQuizz(quizzChoosen.id,currentAppData);
+            Quizz.id = quizzChoosen.id;
+            sessionStorage.setItem("testQuizz",JSON.stringify(Quizz));
+
+            window.location.href = '/test/';
+        }
+    }
+
+})

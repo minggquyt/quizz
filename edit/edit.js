@@ -99,7 +99,7 @@ function renderQuizzCard(data) {
         renderDiv.innerHTML += (
             `<div data-index=${quizz.number} class="content__body--card content__body--card-${index + 1}">
                     <div class="content__body--card__header">
-                        <h3 class="content__body--card__header__number">
+                        <h3 class="content__body--card__header__number be-vietnam-pro-regular">
                             ${index + 1}
                         </h3>
                         <span class="material-symbols-outlined">
@@ -109,15 +109,15 @@ function renderQuizzCard(data) {
                     <div class="content__body--card__body">
                         <div class="content__body--card__body__correct">
                             <div class="content__body--card__body__correct--question">
-                                <p>Câu hỏi</p>
+                                <p class="be-vietnam-pro-regular" >Câu hỏi</p>
                                 <form action="">
-                                    <input type="text" placeholder="Hãy nhập câu hỏi" data-value="question" value="${quizz.question}" >
+                                    <input class="be-vietnam-pro-regular" type="text" placeholder="Hãy nhập câu hỏi" data-value="question" value="${quizz.question}" >
                                 </form>
                             </div>
                             <div class="content__body--card__body__correct--answer">
-                                <p>Câu trả lời</p>
+                                <p class="be-vietnam-pro-regular" >Câu trả lời</p>
                                 <form action="">
-                                    <input type="text" placeholder="Hãy nhập câu trả lời" data-value="correctanswer" value="${quizz['correct-answer']}" >
+                                    <input class="be-vietnam-pro-regular" type="text" placeholder="Hãy nhập câu trả lời" data-value="correctanswer" value="${quizz['correct-answer']}" >
                                 </form>
                             </div>
                             <div class="content__body--card__body__correct--image">
@@ -129,20 +129,20 @@ function renderQuizzCard(data) {
                         </div>
                         <div class="content__body--card__body__preview_and_wrong">
                             <div class="content__body--card__body__preview">
-                                <h1>Xem trước</h1>
+                                <h1 class="be-vietnam-pro-extrabold" >Xem trước</h1>
                             </div>
                             <div class="content__body--card__body__wrong">
                                 <form action="" class="content__body--card__body__wrong-answer">
-                                    <p>Lựa chọn đáp án</p>
-                                    <input type="text" placeholder="Nhập lựa chọn trắc nghiệm 1" data-value="wronganswer1" value="${quizz["wrong-answer"][0]}" >
+                                    <p class="be-vietnam-pro-regular" >Lựa chọn đáp án</p>
+                                    <input class="be-vietnam-pro-regular" type="text" placeholder="Nhập lựa chọn trắc nghiệm 1" data-value="wronganswer1" value="${quizz["wrong-answer"][0]}" >
                                 </form>
                                 <form action="" class="content__body--card__body__wrong-answer">
-                                    <p>Lựa chọn đáp án</p>
-                                    <input type="text" placeholder="Nhập lựa chọn trắc nghiệm 2" data-value="wronganswer2" value="${quizz["wrong-answer"][1]}" >
+                                    <p class="be-vietnam-pro-regular">Lựa chọn đáp án</p>
+                                    <input class="be-vietnam-pro-regular" type="text" placeholder="Nhập lựa chọn trắc nghiệm 2" data-value="wronganswer2" value="${quizz["wrong-answer"][1]}" >
                                 </form>
                                 <form action="" class="content__body--card__body__wrong-answer">
-                                    <p>Lựa chọn đáp án</p>
-                                    <input type="text" placeholder="Nhập lựa chọn trắc nghiệm 3" data-value="wronganswer3" value="${quizz["wrong-answer"][2]}" >
+                                    <p class="be-vietnam-pro-regular">Lựa chọn đáp án</p>
+                                    <input class="be-vietnam-pro-regular" type="text" placeholder="Nhập lựa chọn trắc nghiệm 3" data-value="wronganswer3" value="${quizz["wrong-answer"][2]}" >
                                 </form>
                                 <p class="content__body--card__body__wrong--delete">
                                     <span class="material-symbols-outlined">
@@ -195,7 +195,7 @@ addQuizzCardButton.addEventListener("click", (e) => {
 
     divContainer.innerHTML = (
         `<div data-index=${quizzCard.number} class="content__body--card__header">
-                        <h3 class="content__body--card__header__number">
+                        <h3 class="content__body--card__header__number be-vietnam-pro-regular">
                             ${orderOfCurrentCard}
                         </h3>
                         <span class="material-symbols-outlined">
@@ -205,15 +205,15 @@ addQuizzCardButton.addEventListener("click", (e) => {
                     <div class="content__body--card__body">
                         <div class="content__body--card__body__correct">
                             <div class="content__body--card__body__correct--question">
-                                <p>Câu hỏi</p>
+                                <p class="be-vietnam-pro-regular" >Câu hỏi</p>
                                 <form action="">
-                                    <input data-value="question" type="text" placeholder="Hãy nhập câu hỏi">
+                                    <input data-value="question" type="text" class="be-vietnam-pro-regular" placeholder="Hãy nhập câu hỏi">
                                 </form>
                             </div>
                             <div class="content__body--card__body__correct--answer">
-                                <p>Câu trả lời</p>
+                                <p class="be-vietnam-pro-regular" >Câu trả lời</p>
                                 <form action="">
-                                    <input data-value="correctanswer" type="text" placeholder="Hãy nhập câu trả lời">
+                                    <input class="be-vietnam-pro-regular" data-value="correctanswer" type="text" placeholder="Hãy nhập câu trả lời">
                                 </form>
                             </div>
                             <div class="content__body--card__body__correct--image">
@@ -225,20 +225,20 @@ addQuizzCardButton.addEventListener("click", (e) => {
                         </div>
                         <div class="content__body--card__body__preview_and_wrong">
                             <div class="content__body--card__body__preview">
-                                <h1>Xem trước</h1>
+                                <h1 class="be-vietnam-pro-extrabold">Xem trước</h1>
                             </div>
                             <div class="content__body--card__body__wrong">
                                 <form action="" class="content__body--card__body__wrong-answer">
-                                    <p>Lựa chọn đáp án</p>
-                                    <input data-value="wronganswer1" type="text" placeholder="Nhập lựa chọn trắc nghiệm 1">
+                                    <p class="be-vietnam-pro-regular">Lựa chọn đáp án</p>
+                                    <input data-value="wronganswer1" class="be-vietnam-pro-regular" type="text" placeholder="Nhập lựa chọn trắc nghiệm 1">
                                 </form>
                                 <form action="" class="content__body--card__body__wrong-answer">
-                                    <p>Lựa chọn đáp án</p>
-                                    <input data-value="wronganswer2" type="text" placeholder="Nhập lựa chọn trắc nghiệm 2">
+                                    <p class="be-vietnam-pro-regular">Lựa chọn đáp án</p>
+                                    <input class="be-vietnam-pro-regular" data-value="wronganswer2" type="text" placeholder="Nhập lựa chọn trắc nghiệm 2">
                                 </form>
                                 <form action="" class="content__body--card__body__wrong-answer">
-                                    <p>Lựa chọn đáp án</p>
-                                    <input data-value="wronganswer3" type="text" placeholder="Nhập lựa chọn trắc nghiệm 3">
+                                    <p class="be-vietnam-pro-regular">Lựa chọn đáp án</p>
+                                    <input class="be-vietnam-pro-regular" data-value="wronganswer3" type="text" placeholder="Nhập lựa chọn trắc nghiệm 3">
                                 </form>
                                 <p class="content__body--card__body__wrong--delete">
                                     <span class="material-symbols-outlined">
