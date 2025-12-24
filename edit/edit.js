@@ -15,9 +15,6 @@ if (navType == "navigate") {
         indexOfCurrentQuizz = sessionQuizzData.index
         currentQuizz = currentAppData[statusOfQuizz][indexOfCurrentQuizz];
         renderQuizzCard(currentQuizz.sentences);
-
-        console.log(currentAppData);
-        console.log(currentAppData.finish[sessionQuizzData.index]);
     }
     else {
         const id = `quizz-${currentAppData.autoIncrement}`;
@@ -75,13 +72,11 @@ else if (navType == "reload") {
 
         renderQuizzCard(currentQuizz.sentences);
     }
-    console.log("User reload trang !");
 
     preventFormDefaultBehavior();
 
 }
 else {
-    console.log("User back_forward !");
 
     const currentAppData = JSON.parse(localStorage.getItem("appData"));
     renderQuizzCard(currentAppData.draft[currentAppData.draft.length - 1].sentences);
@@ -95,7 +90,6 @@ else {
 function renderQuizzCard(data) {
     const renderDiv = document.querySelector(".content__body--cards");
     data.forEach((quizz, index) => {
-        console.log(quizz.question);
         renderDiv.innerHTML += (
             `<div data-index=${quizz.number} class="content__body--card content__body--card-${index + 1}">
                     <div class="content__body--card__header">
@@ -256,8 +250,6 @@ addQuizzCardButton.addEventListener("click", (e) => {
 
     currentAppData[statusOfQuizz][indexOfCurrentQuizz] = currentQuizz;
 
-    console.log(currentAppData);
-
     localStorage.setItem("appData", JSON.stringify(currentAppData));
 
     preventFormDefaultBehavior();
@@ -317,19 +309,13 @@ container.addEventListener('change', (e) => {
     e.stopPropagation();
 
     const input = e.target.closest('.content__body--card');
-    console.log(input.dataset.index)
 
     currentQuizz.sentences.forEach((quizz) => {
         if (quizz.number == input.dataset.index) {
-            console.log("Câu hỏi hiện tại mà người dùng đã nhập: ");
-            console.log(quizz);
 
             // logic lấy giá trị và update lên LS 
             const inputValue = e.target.value;
             const type = e.target.dataset.value;
-
-            console.log(inputValue);
-            console.log(type);
 
             // logic update lên localStorage 
             if (type == 'question')
@@ -367,8 +353,6 @@ const createDraftQuizzButton = document.querySelector(".content__header--create_
 createDraftQuizzButton.addEventListener("click", (e) => {
     e.stopPropagation();
     e.preventDefault();
-
-    console.log("bạn đã click vào button tạo bản nháp !");
 
     const currentAppData = JSON.parse(localStorage.getItem("appData"));
 
