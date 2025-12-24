@@ -9,6 +9,7 @@ body{
 .header{
     width: 100%;
     height: 64px;
+    gap: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -148,7 +149,6 @@ body{
 }
 .content__body--option{
     width: 100%;
-    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -268,4 +268,34 @@ body{
     outline: none;
     border-radius: 5px;
     background-color: #2E3856;
+}
+
+@media (min-width: 320px) and (max-width: 860px){
+    .content__header > h1{
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
+
+
+@media (min-width: 320px) and (max-width: 465px){
+    .content__header > h1 > div{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .content__body--card__body__preview_and_wrong{
+        flex-direction: column;
+    }
+    .content__body--card__body__preview{
+        min-height: 300px;
+    }
+    .content__body--card__body__correct{
+        flex-direction: column;
+        gap: 10px;
+    }
+    .content__body--card__body__correct > div:nth-child(1),
+    .content__body--card__body__correct > div:nth-child(2){
+        width: 100%;
+    }
 }

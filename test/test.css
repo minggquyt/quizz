@@ -58,7 +58,6 @@ body{
     width: 100%;
     max-width: 776px;
     padding: 20px;
-    height: 500px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -93,7 +92,8 @@ body{
     grid-gap: 30px;
 }
 .content__test_card_body--answer > button{
-    width: 345px;
+    width: 100%;
+    max-width: 345px;
     height: 60px;
     border: 2px solid #586380;
     background-color: transparent;
@@ -103,4 +103,28 @@ body{
 }
 .content__test_card_body--answer > button:hover{
     background-color: #2a3450;
+}
+
+@media (min-width: 320px) and (max-width: 870px){
+    .content__test_card_body--answer{
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+    .content__test_container{
+        padding-inline: 20px;
+    }
+    .content__test_card_header{
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .content__test_card_header--left_content{
+        align-items: center;
+    }
+    .content__test_card_header--left_content > h1{
+        text-align: center;
+    }
+    .content__test_card_header--right_content{
+        align-items: center;
+    }
 }
